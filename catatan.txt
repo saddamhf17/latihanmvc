@@ -1,0 +1,11 @@
+Membuat Website MVC
+
+A. persiapan
+1. buat struktur folder yang diperlukan terlebih dahulu.
+2. buat file index.php pada public folder, pada file tersebut tulis script require_one untuk melakukan bootstraping file init.php yang akan dibuat.
+3. buat file init.php, kemudian tulis script untuk memanggil file app dan controller.
+4. kemudian buat variable $app pada index.php untuk menjalankan class App.
+
+B. Routing
+1. membuat parseURL pada file App.php untuk merapihkan url yang dikirimkan.
+2. membuat file .htaccess untuk blok akses user ke folder terlarang dengan menulis Option -Indexes, skrip tersebut membuat user tidak dapat mengakses folder yang tidak berisi file index. Kemudian membuat file htaccess lg pada folder public 
