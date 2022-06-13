@@ -7,5 +7,22 @@ A. persiapan
 4. kemudian buat variable $app pada index.php untuk menjalankan class App.
 
 B. Routing
-1. membuat parseURL pada file App.php untuk merapihkan url yang dikirimkan.
-2. membuat file .htaccess untuk blok akses user ke folder terlarang dengan menulis Option -Indexes, skrip tersebut membuat user tidak dapat mengakses folder yang tidak berisi file index. Kemudian membuat file htaccess lg pada folder public 
+1. membuat parseURL pada file App.php untuk merapihkan url yang dikirimkan, dan memecah url menjadi index array.
+2. membuat file .htaccess untuk blok akses user ke folder terlarang dengan menulis Option -Indexes, skrip tersebut membuat user tidak dapat mengakses folder yang tidak berisi file index. 
+3.Kemudian membuat file htaccess lg pada folder public, untuk rewrite url.
+
+C.Controller
+1. membuat controller, method, dan params default pada file app.
+2. membuat checker untuk mengetahui apakah file yang diminta controller tersedia atau tidak, jika ada maka index url controller akan dihapus.
+3. kemudian membuat cheker apakah ada method yang dimasukkan. jika ada maka akan masuk ke controller apakah ada method yang diminta. jika ada maka index url method akan dihapus.
+4. membuat checker apakah url yang dikirim sudah kosong. jika tidak maka index array url tersebut akan menjadi value params.
+5. menjalankan controller, method, dan params jika tersedia dengan call_user_func_array.
+6. pada folder controller, buat file yang kamu butuhkan, seperti home, about, dsb. didalamnya buat class dengan nama file, kemudian buat method dalam bentuk public function.
+
+D. View
+1. pada file home pada folder controller, panggil view yang dibutuhkan di dalam method.
+2. pada file controller, buat method view, didalam nya terdapat params yang berisi value view yang ada di dalam file home sebelum nya, dan data untuk jaga" jika ada data yang ingin dikirim. kemudian panggil file views yang dibutuhkan dengan require_once.
+3. selanjutnya jadikan file home pada folder controller sebagai child dari file controller dengan menggunakan extends.
+4. lakukan hal yang sama sebelumnya pada file about. perbedaan nya, disini kita akan mengirim data menggunakan params.
+5. memisahkan antara header dan footer di setiap halaman, buat folder templates berisi file header, footer, atau yg lain jika diperlukan. kemudian buat view baru pada folder controller di setiap file nya. di buat sesuai urutan.
+6. menambahkan data judul untuk mengganti title pada header yang terpisah 
