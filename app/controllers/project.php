@@ -9,5 +9,14 @@
             $this->view('templates/footer');
 
         }
+        public function detail($id){
+
+            $data['judul']="Detail Project";
+            $data['project']= $this->model('project_model')->getProjectById($id);
+            $this->view('templates/header', $data);
+            $this->view('project/detail', $data);
+            $this->view('templates/footer');
+
+        }
     }
 ?>
